@@ -1,3 +1,6 @@
+import os
+from os import getenv, environ
+from dotenv import load_dotenv
 import psutil
 import shutil
 import time
@@ -8,18 +11,17 @@ from pyrogram.types import (InlineQueryResultArticle, InputTextMessageContent,
                             InlineKeyboardMarkup, InlineKeyboardButton)
 from pyrogram.types import ReplyKeyboardMarkup
 
-import os
-from os import getenv, environ
-from dotenv import load_dotenv
-
-if os.path.exists('config.env'):
-  load_dotenv('config.env')
-
 class Var(object):
     API_ID = int(getenv('API_ID'))
     API_HASH = str(getenv('API_HASH'))
     BOT_TOKEN = str(getenv('BOT_TOKEN')
 
+ bot = Client(
+    "my_bot",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN,)                      
+                    
 KeyboardZ = ReplyKeyboardMarkup(
     [
         ["Start", "Ping", "Status", "DC"],
@@ -30,13 +32,7 @@ KeyboardZ = ReplyKeyboardMarkup(
         ["Update"]
 
     ],
-    resize_keyboard=True)
-
- bot = Client(
-    "my_bot",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=BOT_TOKEN,)                   
+    resize_keyboard=True)                 
 
 @bot.on_message((filters.command("start") | filters.regex('Start')) & filters.private & ~filters.edited)
 def command(bot, message):
