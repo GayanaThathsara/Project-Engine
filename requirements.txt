@@ -1,0 +1,17 @@
+pyrogram
+tgcrypto
+pymongo
+motor
+marshmallow
+umongo
+requests
+bs4
+imdbpy
+aiohttp
+python-dotenv
+aiofiles
+dnspython
+apscheduler
+requests
+psutil
+pyromod
