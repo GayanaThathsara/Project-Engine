@@ -43,7 +43,7 @@ KeyboardZ = ReplyKeyboardMarkup(
 def command(bot, message):
     bot.send_message(
         chat_id=message.chat.id,
-        text="""Hi Test Buttn!""",
+        text="""Hi! Bot Menu Updated...\n""",
         parse_mode="html",
         reply_markup=KeyboardZ)
 
