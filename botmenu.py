@@ -20,12 +20,6 @@ class Var(object):
     API_HASH = str(getenv('API_HASH'))
     BOT_TOKEN = str(getenv('BOT_TOKEN')
 
-bot = Client(
-    "my_bot",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=BOT_TOKEN,)
-
 KeyboardZ = ReplyKeyboardMarkup(
     [
         ["Start", "Ping", "Status", "DC"],
@@ -38,6 +32,11 @@ KeyboardZ = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True)
 
+ bot = Client(
+    "my_bot",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN,)                   
 
 @bot.on_message((filters.command("start") | filters.regex('Start')) & filters.private & ~filters.edited)
 def command(bot, message):
