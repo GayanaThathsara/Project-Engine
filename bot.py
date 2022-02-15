@@ -27,6 +27,11 @@ KeyboardZ = ReplyKeyboardMarkup(
         ["Start", "Ping", "Status", "DC"],
         ["A", "B", "C", "D"],
         ["E", "F", "G", "H"],
+        ["I", "J", "K", "L"],
+        ["M", "N", "O", "P"],
+        ["Q", "R", "S", "T"],
+        ["U", "V", "W", "X"],
+        ["Y", "Z", "0-9"],
         ["Test Audio"],
         ["Devs", "Index", "DB"],
         ["Update"]
@@ -42,10 +47,10 @@ def command(bot, message):
         parse_mode="html",
         reply_markup=KeyboardZ)
 
-@bot.on_message(filters.incoming & filters.command("run"))
+@bot.on_message(filters.incoming & filters.command("alive"))
 def command(bot, message):
     bot.send_message(message.chat.id, "Bot Alive")
-    bot.send_dice(message.chat.id, "🏀")
+    bot.send_dice(message.chat.id, "🎲")
     
 @bot.on_message(filters.incoming & filters.command("image"))
 def command(bot, message):
