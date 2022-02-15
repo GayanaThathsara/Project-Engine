@@ -1,2 +1,2 @@
-worker: python3 botmenu.py
+worker: python3 bot.py
  
