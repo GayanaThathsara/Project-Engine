@@ -1,6 +1,6 @@
 # Project-Engine
 
-Telegram Bot Making Public Template 
+Telegram Bot Public Template 
 
 - Based on Pyrogram library 
 - Keyboard features 
